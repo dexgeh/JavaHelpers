@@ -37,4 +37,11 @@ public class XMLTransform {
 						"/helpers/xml/NamespaceRemover.xsl"))
 				.transform(new StreamSource(is), new StreamResult(os));
 	}
+	
+	public static void cleanup(InputStream is, OutputStream os) throws TransformerConfigurationException, TransformerException, TransformerFactoryConfigurationError {
+		getTransformer(
+				XMLTransform.class.getResourceAsStream(
+						"/helpers/xml/Cleanup.xsl"))
+				.transform(new StreamSource(is), new StreamResult(os));
+	}
 }
